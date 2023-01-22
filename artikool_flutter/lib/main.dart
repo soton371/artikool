@@ -1,4 +1,5 @@
 import 'package:artikool_client/artikool_client.dart';
+import 'package:artikool_flutter/screens/home.dart';
 import 'package:flutter/material.dart';
 import 'package:serverpod_flutter/serverpod_flutter.dart';
 
@@ -24,7 +25,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Serverpod Example'),
+      // home: const MyHomePage(title: 'Serverpod Example'),
+      home: const HomeScreen(),
     );
   }
 }
@@ -87,6 +89,7 @@ class MyHomePageState extends State<MyHomePage> {
     }
   }
 
+  //fetch artical
   fetchArticel()async{
     try {
       var result = await client.artikool.getArticles(keyword: _textEditingController.text);
@@ -127,7 +130,6 @@ class MyHomePageState extends State<MyHomePage> {
               padding: const EdgeInsets.only(bottom: 16.0),
               child: ElevatedButton(
                 onPressed: fetchArticel,
-                // onPressed: _callHello,
                 child: const Text('Send to Server'),
               ),
             ),
