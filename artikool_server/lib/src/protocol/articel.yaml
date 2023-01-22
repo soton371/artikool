@@ -1,0 +1,7 @@
+class: Articel
+table: articel
+fields:
+  title: String
+  content: String
+  publishedOn: DateTime
+  isPrime: bool
